@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import com.lyz.common.cache.CacheEnum;
 import com.lyz.common.cache.CacheMan;
 import com.lyz.common.dao.BaseDao;
+import com.lyz.common.mq.send.Rabbit;
+import com.lyz.common.mq.util.RabbitQueue;
 import com.lyz.common.service.impl.BaseServiceImpl;
 import com.lyz.user.dao.CarboxDao;
 import com.lyz.user.model.Carbox;
@@ -28,5 +30,7 @@ public class CarboxServiceImpl extends BaseServiceImpl<Carbox> implements Carbox
 		CacheMan.postLock("lyz001", 100);
 		String key =CacheMan.get("lyz123", String.class);
 		CacheMan.unLock("lyz001");
+		Rabbit.send(RabbitQueue.LIGE_RABBITMQ, "啦啦啦");
+		
 	}
 }
