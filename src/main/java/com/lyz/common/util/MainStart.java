@@ -14,5 +14,6 @@ public class MainStart {
 		test1.orderNumber ="二二二二二二";
 		new Thread(test1,"线程3").start();
 		
+		System.out.println("hello word");
 	}
 }
