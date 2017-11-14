@@ -1,11 +1,10 @@
-package com.lyz.user.model;
+package com.lyz.user.model.obj;
 
-import java.io.Serializable;
-
-public class Carbox implements Serializable {
+public class CarBoxDto {
 	private Integer id;
 	private Integer boxLength;
 	private java.util.Date createTime;
+	private String type = "dto";
 
 	public Integer getId() {
 		return id;
@@ -31,9 +30,17 @@ public class Carbox implements Serializable {
 		this.createTime = createTime;
 	}
 
-	@Override
-	public String toString() {
-		return "Carbox [id=" + id + ", boxLength=" + boxLength + ", createTime=" + createTime + "]";
+	public String getType() {
+		return type;
 	}
 
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	@Override
+	public String toString() {
+		return "CarBoxDto [id=" + id + ", boxLength=" + boxLength + ", createTime=" + createTime + ", type=" + type
+				+ "]";
+	}
 }

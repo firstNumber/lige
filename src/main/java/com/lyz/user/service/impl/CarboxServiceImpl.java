@@ -1,9 +1,10 @@
 package com.lyz.user.service.impl;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.lyz.common.cache.CacheEnum;
 import com.lyz.common.cache.CacheMan;
 import com.lyz.common.dao.BaseDao;
 import com.lyz.common.mq.send.Rabbit;
@@ -30,7 +31,10 @@ public class CarboxServiceImpl extends BaseServiceImpl<Carbox> implements Carbox
 		CacheMan.postLock("lyz001", 100);
 		String key =CacheMan.get("lyz123", String.class);
 		CacheMan.unLock("lyz001");
-		Rabbit.send(RabbitQueue.LIGE_RABBITMQ, "啦啦啦");
+		Carbox carbox = new Carbox();
+		carbox.setBoxLength(18);
+		carbox.setCreateTime(new Date());
+		Rabbit.send(RabbitQueue.LIGE_RABBITMQ, carbox);
 		
 	}
 }
