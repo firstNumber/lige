@@ -21,7 +21,7 @@ public class Rabbit {
 	 * @param queueName
 	 * @param msg
 	 *            需重写toString方法
-	 * @Author: wangxingfei
+	 * @Author: liyognzhen
 	 * @Date: 2016年11月14日
 	 */
 	public static void send(RabbitQueue queueName, Object msg) {
