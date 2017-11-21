@@ -24,7 +24,7 @@ private final static Log logger = LogFactory.getLog(JsonUtil.class);
      * obj 转 json
     * @param obj
     * @return
-    * @Author: wangxingfei
+    * @Author: liyongzhen
     * @Date: 2017年2月17日
      */
     private  static String toJson(final Object obj) {
@@ -69,7 +69,7 @@ private final static Log logger = LogFactory.getLog(JsonUtil.class);
      * 序列化为json格式
     * @param object
     * @return
-    * @Author: wangxingfei
+    * @Author: liyongzhen
     * @Date: 2017年2月17日
      */
 	public static String serialize(Object object) {

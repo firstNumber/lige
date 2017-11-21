@@ -42,7 +42,7 @@ public class Rabbit {
 	 * @param fromQueue
 	 *            来源队列
 	 * @param content
-	 * @Author: wangxingfei
+	 * @Author: liyongzhen
 	 * @Date: 2016年11月21日
 	 */
 	public static void sendEmail4MQError(RabbitQueue fromQueue, String content) {
@@ -56,7 +56,7 @@ public class Rabbit {
 	 * 发送邮件
 	 * 
 	 * @param ec
-	 * @Author: wangxingfei
+	 * @Author: liyongzhen
 	 * @Date: 2016年11月21日
 	 */
 	public static void sendEmail(EmailContent ec) {
@@ -67,7 +67,7 @@ public class Rabbit {
 	 * 发送邮件到MQ,mq消费者发送并记录
 	 * 
 	 * @param ec
-	 * @Author: wangxingfei
+	 * @Author: liyongzhen
 	 * @Date: 2017年3月3日
 	 */
 	private static void sendEmail2MQ(EmailContent ec) {
@@ -86,7 +86,7 @@ public class Rabbit {
 	 * 
 	 * @param title
 	 * @param content
-	 * @Author: wangxingfei
+	 * @Author: liyongzhen
 	 * @Date: 2016年11月21日
 	 */
 	public static void sendEmail(String title, String content) {
@@ -103,7 +103,7 @@ public class Rabbit {
 	 *            收件人A,收件人B
 	 * @param title
 	 * @param content
-	 * @Author: wangxingfei
+	 * @Author: liyongzhen
 	 * @Date: 2017年3月3日
 	 */
 	public static void sendEmail(String recipients, String title, String content) {
@@ -121,7 +121,7 @@ public class Rabbit {
 	 * @param routing
 	 *            key
 	 * @param msg
-	 * @Author: wangxingfei
+	 * @Author: liyongzhen
 	 * @Date: 2016年12月21日
 	 */
 	public static void sendExchage(RabbitExchange exchange, String routingKey, Object msg) {
@@ -139,7 +139,7 @@ public class Rabbit {
 	 * 发送短信
 	 * 
 	 * @param sms
-	 * @Author: wangxingfei
+	 * @Author: liyongzhen
 	 * @Date: 2017年4月1日
 	 */
 	public static void sendSMS(SMSDto sms) {

@@ -51,7 +51,7 @@ public class PageBean <T> implements Serializable{
     /**
      * 简易版获取起始行号(不进行总页码判断)
     * @return
-    * @Author: wangxingfei
+    * @Author: liyongzhen
     * @Date: 2015年5月22日
      */
     public Integer getStartRow() {
@@ -156,7 +156,7 @@ public class PageBean <T> implements Serializable{
     * @param currentPage
     * @param pageSize
     * @return
-    * @Author: wangxingfei
+    * @Author: liyongzhen
     * @Date: 2016年5月19日
      */
     public static Integer getStartRow(Integer currentPage,Integer pageSize) {
