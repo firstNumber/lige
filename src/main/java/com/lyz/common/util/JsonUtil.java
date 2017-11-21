@@ -98,7 +98,7 @@ public class JsonUtil {
    * @param byteArr
    * @param ref
    * @return
-   * @Author: liduo
+   * @Author: liyongzhen
    * @Date: 2017年1月4日
     */
     public static  <T> List<T> toList(final byte[] byteArr, TypeReference<List<T>> ref) {
