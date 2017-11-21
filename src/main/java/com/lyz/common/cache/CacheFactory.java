@@ -8,7 +8,7 @@ import com.lyz.common.util.SpringContextUtil;
  * *********************************
 * 缓存工厂类 ,用于 key在缓存查不到时进行后续操作
 *
-* @author: wangxingfei
+* @author: liyongzhen
 * @createdAt: 2016年8月29日上午9:22:29
 **********************************
  */
@@ -21,7 +21,7 @@ public class CacheFactory {
 	* @param key
 	* @return
 	* @throws Exception
-	* @Author: wangxingfei
+	* @Author: liyongzhen
 	* @Date: 2016年8月29日
 	 */
 	public static Object factory(String cacheName, Object key) throws Exception {

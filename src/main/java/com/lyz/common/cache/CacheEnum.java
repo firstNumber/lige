@@ -138,7 +138,7 @@ public enum CacheEnum {
 	 * 
 	 * @param cacheName
 	 * @return
-	 * @Author: wangxingfei
+	 * @Author: liyongzhen
 	 * @Date: 2016年5月17日
 	 */
 	public static CacheEnum contains(String cacheName) {

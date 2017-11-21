@@ -332,7 +332,7 @@ public abstract class BaseServiceImpl<T> implements BaseService<T> {
 	 * 
 	 * @param ids
 	 * @return
-	 * @Author: wangxingfei
+	 * @Author: liyongzhen
 	 * @Date: 2015年8月21日
 	 */
 	@Override
@@ -347,7 +347,7 @@ public abstract class BaseServiceImpl<T> implements BaseService<T> {
 	 * @param cacheEnum
 	 * @param value
 	 * @return
-	 * @Author: wangxingfei
+	 * @Author: liyongzhen
 	 * @Date: 2016年5月17日
 	 */
 	@Override
@@ -358,7 +358,7 @@ public abstract class BaseServiceImpl<T> implements BaseService<T> {
 	/**
 	 * remove缓存
 	 * 
-	 * @Author: wangxingfei
+	 * @Author: liyongzhen
 	 * @Date: 2016年10月13日
 	 */
 	protected void removeCache(UpdateCacheType type, Object value) {
@@ -370,7 +370,7 @@ public abstract class BaseServiceImpl<T> implements BaseService<T> {
 	 * 
 	 * @param countParam
 	 * @return
-	 * @Author: wangxingfei
+	 * @Author: liyongzhen
 	 * @Date: 2017年3月16日
 	 */
 	@Override

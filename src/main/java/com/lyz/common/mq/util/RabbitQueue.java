@@ -66,7 +66,7 @@ public enum RabbitQueue {
 	 * 
 	 * @param queueName
 	 * @return
-	 * @Author: wangxingfei
+	 * @Author: liyongzhen
 	 * @Date: 2016年11月18日
 	 */
 	public static RabbitQueue getByName(String queueName) {

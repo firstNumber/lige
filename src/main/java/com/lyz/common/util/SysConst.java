@@ -145,7 +145,7 @@ public class SysConst {
 	/**
 	 * ********************************* 订单 分类
 	 * 
-	 * @author: wangxingfei
+	 * @author: liyongzhen
 	 * @createdAt: 2016年8月12日下午5:01:43
 	 ********************************** 
 	 */
@@ -156,7 +156,7 @@ public class SysConst {
 	/**
 	 * 众包单 状态
 	 * 
-	 * @author: wangxingfei
+	 * @author: liyongzhen
 	 * @createdAt: 2016年8月3日上午10:31:50
 	 ********************************** 
 	 */
@@ -208,7 +208,7 @@ public class SysConst {
 	 * *********************************
 	 * 
 	 * @Description: 用户操作类型
-	 * @author: wangxingfei
+	 * @author: liyongzhen
 	 * @createdAt: 2017年8月30日下午3:43:05
 	 ********************************** 
 	 */
@@ -253,7 +253,7 @@ public class SysConst {
 	/**
 	 * 订单来源平台
 	 * 
-	 * @author: wangxingfei
+	 * @author: liyongzhen
 	 * @createdAt: 2016年8月3日上午11:26:35
 	 ********************************** 
 	 */
@@ -278,7 +278,7 @@ public class SysConst {
 	/**
 	 * 客户端 来源 类型 *********************************
 	 * 
-	 * @author: wangxingfei
+	 * @author: liyongzhen
 	 * @createdAt: 2015年8月19日下午4:07:44
 	 ********************************** 
 	 */

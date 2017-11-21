@@ -51,7 +51,7 @@ public abstract class MQReceiveHandler implements ChannelAwareMessageListener {
 	 * listener 中用此方法实现业务逻辑
 	 * 
 	 * @param message
-	 * @Author: wangxingfei
+	 * @Author: liyongzhen
 	 * @Date: 2016年11月18日
 	 */
 	protected abstract void doBusi(Message message);
