@@ -110,6 +110,12 @@
 			<include refid="other-condition" />
 		</where>
 	</delete>	
+	
+	<select id="selectCarbox" resultMap="result" >
+		select
+		<include refid="base_field" />
+		from carbox 
+	</select>
 		
 </mapper>
 
