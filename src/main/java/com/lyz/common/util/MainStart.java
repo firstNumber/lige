@@ -15,6 +15,7 @@ public class MainStart {
 					e.printStackTrace();
 				}
 				System.out.println(tl.get());
+				System.out.println("========="+tt.a);
 			}
 		});
 		
@@ -24,6 +25,7 @@ public class MainStart {
 				tt.a = 222;
 				tl.set(tt.a);
 				System.out.println(tl.get());
+				System.out.println("========="+tt.a);
 			}
 		});
 		
