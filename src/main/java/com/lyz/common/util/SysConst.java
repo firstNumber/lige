@@ -186,7 +186,7 @@ public class SysConst {
 	 * *********************************
 	 * 
 	 * @Description:用户类型
-	 * @author: liduo
+	 * @author: liyongzhen
 	 * @createdAt: 2017年8月30日下午3:06:04
 	 ********************************** 
 	 */
