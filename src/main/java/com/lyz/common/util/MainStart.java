@@ -1,38 +1,20 @@
 package com.lyz.common.util;
 
+import java.math.BigDecimal;
+
 public class MainStart {
 	public static void main(String[] args) {
-		final Test tt = new Test();
-		final ThreadLocal<Integer> tl =new ThreadLocal<Integer>();
- 		Thread t = new Thread(new Runnable() {
-			@Override
-			public void run() {
-				tt.a =0;
-				tl.set(tt.a);
-				try {
-					Thread.sleep(3000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				System.out.println(tl.get());
-				System.out.println("========="+tt.a);
-			}
-		});
-		
-		Thread t2 = new Thread(new Runnable() {
-			@Override
-			public void run() {
-				tt.a = 222;
-				tl.set(tt.a);
-				System.out.println(tl.get());
-				System.out.println("========="+tt.a);
-			}
-		});
-		
-		t.start();
-		t2.start();
-		
-		
+//		BigDecimal finalPrice = new BigDecimal(0.0);
+//		java.math.BigDecimal price = new BigDecimal(0.0);
+//		
+//			double allKm = 100.0;
+//			finalPrice = finalPrice.add(
+//					allKm % 1000 == 0 ? price.multiply(new BigDecimal(new Double(allKm).longValue() / 1000))
+//							: price.multiply(new BigDecimal(new Double(allKm).longValue() / 1000 + 1)));
+//			
+//			
+//			System.out.println(finalPrice);
+			BigDecimal finalPrice;
 	}
 }
 
