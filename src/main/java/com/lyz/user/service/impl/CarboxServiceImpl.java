@@ -3,6 +3,7 @@ package com.lyz.user.service.impl;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.support.FormattingConversionServiceFactoryBean;
 import org.springframework.stereotype.Service;
 
 import com.lyz.common.cache.CacheMan;
@@ -21,6 +22,8 @@ public class CarboxServiceImpl extends BaseServiceImpl<Carbox> implements Carbox
 	@Autowired
 	private CarboxDao carboxDaoImpl;
 	
+	FormattingConversionServiceFactoryBean dateConversionService;
+	
 	@Override
 	public BaseDao<Carbox> getBaseDao() {
 		return carboxDaoImpl;
@@ -37,4 +40,6 @@ public class CarboxServiceImpl extends BaseServiceImpl<Carbox> implements Carbox
 		Rabbit.send(RabbitQueue.LIGE_RABBITMQ, carbox);
 		
 	}
+	
+	
 }

@@ -1,12 +1,14 @@
 package lige;
 
+import java.lang.annotation.Annotation;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.lyz.user.model.Carbox;
+import com.lyz.common.dynamic.DataSource;
 import com.lyz.user.service.DynamicService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -17,7 +19,12 @@ public class DataMain {
 	
 	@Test
 	public void testCache(){
-		Carbox carbox = dynamicService.querycar();
-		System.out.println(carbox.toString());
+//		Carbox carbox = dynamicService.querycar();
+//		System.out.println(carbox.toString());
+//		AnnotationUtils.getAnnotationAttributes();  
+	}
+	
+	@Test
+	public void testaaa(){
 	}
 }

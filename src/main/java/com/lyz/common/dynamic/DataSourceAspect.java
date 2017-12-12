@@ -3,6 +3,7 @@ package com.lyz.common.dynamic;
 import java.lang.reflect.Method;
 import org.springframework.aop.AfterReturningAdvice;
 import org.springframework.aop.MethodBeforeAdvice;
+import org.springframework.core.annotation.AnnotationUtils;
 
 public class DataSourceAspect implements MethodBeforeAdvice,AfterReturningAdvice 
 {
@@ -10,7 +11,6 @@ public class DataSourceAspect implements MethodBeforeAdvice,AfterReturningAdvice
 	@Override
 	public void afterReturning(Object returnValue, Method method,
 			Object[] args, Object target) throws Throwable {
-		// TODO Auto-generated method stub
 		DataSourceContextHolder.clearDataSourceType();
 	}
 
