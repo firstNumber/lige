@@ -1,15 +1,13 @@
 package mainstr;
 
-import java.util.Date;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.lyz.common.cache.CacheEnum;
 import com.lyz.common.cache.CacheMan;
-import com.lyz.student.model.obj.Student;
 import com.lyz.student.service.StudentService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -20,13 +18,13 @@ public class RedisTest {
 
 	@Test
 	public void student() {
-//		CacheMan.add(null, "lyz.ok", 30);
+		CacheMan.add(CacheEnum.LIGE, "lyz.ok", 30);
 	}
-	
-	@Test
-	public void queryadd(){
-		Student s = new Student();
-//		studentService.queryStudent();
-	}
-	
+
+	// @Test
+	// public void queryadd() {
+	// Student s = new Student();
+	// // studentService.queryStudent();
+	// }
+
 }
