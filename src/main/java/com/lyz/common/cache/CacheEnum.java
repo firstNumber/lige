@@ -3,7 +3,7 @@ package com.lyz.common.cache;
 import org.apache.commons.lang.StringUtils;
 
 public enum CacheEnum {
-	LIGE("", 0);
+	LIGE("", 30);
 	;
 	private String serviceName;
 	private int cacheSecond;

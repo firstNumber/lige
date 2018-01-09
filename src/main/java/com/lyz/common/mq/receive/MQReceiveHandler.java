@@ -6,9 +6,8 @@ import org.apache.log4j.Logger;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.core.ChannelAwareMessageListener;
 
-import com.rabbitmq.client.Channel;
-import com.lyz.common.mq.send.Rabbit;
 import com.lyz.common.mq.util.RabbitQueue;
+import com.rabbitmq.client.Channel;
 
 /**
  * *********************************
@@ -32,16 +31,18 @@ public abstract class MQReceiveHandler implements ChannelAwareMessageListener {
 			mqLog.error("消费消息失败;queue:" + queueName + ",message:" + message, e);
 			RabbitQueue qn = RabbitQueue.getByName(queueName);
 			if (qn != null && qn.isSendEmail()) {
-				Rabbit.sendEmail4MQError(qn,
-						"消费消息失败;queue:" + queueName + ",message:" + message + ",exMsg:" + e.getMessage());
+				// Rabbit.sendEmail4MQError(qn,
+				// "消费消息失败;queue:" + queueName + ",message:" + message +
+				// ",exMsg:" + e.getMessage());
 			}
 			try {
 				channel.basicNack(message.getMessageProperties().getDeliveryTag(), false, false);
 			} catch (IOException e1) {
 				mqLog.error("nack消息失败;queue:" + queueName + ",message:" + message, e);
 				if (qn != null && qn.isSendEmail()) {
-					Rabbit.sendEmail4MQError(qn,
-							"nack消息失败;queue:" + queueName + ",message:" + message + ",exMsg:" + e.getMessage());
+					// Rabbit.sendEmail4MQError(qn,
+					// "nack消息失败;queue:" + queueName + ",message:" + message +
+					// ",exMsg:" + e.getMessage());
 				}
 			}
 		}
