@@ -24,7 +24,6 @@ public class CCC {
 				return o1.price.compareTo(o2.price);
 			}
 		});
-
 		for (People people : pList) {
 			System.out.println(people.price);
 		}
