@@ -21,12 +21,31 @@
 		message-converter="jsonMessageConverter" />
 
 	<!-- 声明队列, 队列名称使用 模块名.业务,多个QUEUE分开写 -->
-	<rabbit:queue name="LIGE_RABBITMQ" />
+<!-- 	<rabbit:queue name="LIGE_RABBITMQ" /> -->
+	<rabbit:queue name="EX_LIGE_RABBITMQ" />
+	
+	<rabbit:queue name="LIGE_RABBITMQ">
+		<rabbit:queue-arguments>
+			<entry key="x-message-ttl" value="5000" value-type="java.lang.Long" />
+			<entry key="x-dead-letter-exchange" value="EXCHANGE_LIGE_SYNC" />
+			<entry key="x-dead-letter-routing-key" value="LIGE.*" />
+		</rabbit:queue-arguments>
+	</rabbit:queue>
+	
+	<!-- 同步订单信息的exchange -->
+	<rabbit:topic-exchange name="EXCHANGE_LIGE_SYNC"
+		id="EXCHANGE_LIGE_SYNC">
+		<rabbit:bindings><!-- queue 使用相同的 pattern,则类似于广播,会把msg发送到对应的queue各一份 -->
+			<rabbit:binding queue="EX_LIGE_RABBITMQ" pattern="LIGE.*" />
+		</rabbit:bindings>
+	</rabbit:topic-exchange>
+	
+	
 
 	<!-- 消费者监听, 将队列指定消费对象 ,如果一个队列指定多个消费对象,则会轮训 , 设置手动ack -->
 	<rabbit:listener-container
-		connection-factory="connectionFactory" acknowledge="manual">
-		<rabbit:listener queues="LIGE_RABBITMQ" ref="addOrderListener" />
-
+		connection-factory="connectionFactory" acknowledge="manual" >
+<!-- 		connection-factory="connectionFactory" acknowledge="manual" concurrency= "2" > -->
+		<rabbit:listener queues="EX_LIGE_RABBITMQ" ref="ligeListener" />
 	</rabbit:listener-container>
 </beans>

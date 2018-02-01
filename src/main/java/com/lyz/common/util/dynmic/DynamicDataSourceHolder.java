@@ -1,19 +1,20 @@
 package com.lyz.common.util.dynmic;
 
-public class DynamicDataSourceHolder {
-	private static final ThreadLocal<String> holder = new ThreadLocal<String>();
+import com.lyz.common.dynamic.DataSourceEnum;
 
-	public static void putDataSourceKey(String key) {
+public class DynamicDataSourceHolder {
+	private static final ThreadLocal<DataSourceEnum> holder = new ThreadLocal<DataSourceEnum>();
+
+	public static void putDataSourceKey(DataSourceEnum key) {
 		holder.set(key);
 	}
 
-	public static String getDataSourceKey() {
+	public static DataSourceEnum getDataSourceKey() {
 		return holder.get();
 	}
-	
-	public static void remove(){
-        holder.remove();
-    }
-	
-	
+
+	public static void remove() {
+		holder.remove();
+	}
+
 }
