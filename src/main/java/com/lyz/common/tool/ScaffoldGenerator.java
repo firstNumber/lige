@@ -45,7 +45,7 @@ public class ScaffoldGenerator {
 		// arg3 表名
 		// ScaffoldGen generator = new ScaffoldGen("zhongbao.driver",
 		// "OrderDriver","order_driver");
-		ScaffoldGen generator = new ScaffoldGen("carbox", "Carbox2", "Carbox2");
+		ScaffoldGen generator = new ScaffoldGen("cabox", "Carbox2", "Carbox2");
 
 		// ScaffoldGen generator = new ScaffoldGen("zhongbao.driver",
 		// "OrderDriverPackage","order_driver_package");

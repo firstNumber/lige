@@ -123,10 +123,15 @@
 		</where>
 	</delete>	
 	
-	<update id="updateStatus">
-		update carbox set stauts=#{status,jdbcType=NUMERIC},updateTime=#{updateTime} 
-		where id=#{id,jdbcType=INTEGER}
-		and stauts=#{oldstatus,jdbcType=NUMERIC}
+<!-- 	<update id="updateStatus"> -->
+<!-- 		update carbox set stauts=#{status,jdbcType=NUMERIC},updateTime=#{updateTime}  -->
+<!-- 		where id=#{id,jdbcType=INTEGER} -->
+<!-- 		and stauts=#{oldstatus,jdbcType=NUMERIC} -->
+<!-- 	</update>	 -->
+	
+	<update id="updateStatus" parameterType="com.lyz.cabox.model.Carbox">
+		update carbox set stauts=#{stauts,jdbcType=NUMERIC},updateTime=#{updateTime} 
+		where  boxLength !=99
 	</update>	
 		
 </mapper>

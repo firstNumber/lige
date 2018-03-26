@@ -1,35 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
-<mapper namespace="com.lyz.user.model.Carbox">
+<mapper namespace="com.lyz.cabox.model.Carbox2">
 
-	<resultMap id="result" type="com.lyz.user.model.Carbox">
+	<resultMap id="result" type="com.lyz.cabox.model.Carbox2">
             <id property="id" column="id" jdbcType="INTEGER" />
-            <result property="boxLength" column="boxLength" jdbcType="NUMERIC" />
-            <result property="createTime" column="createTime" />
+            <result property="boxleng" column="boxleng" jdbcType="NUMERIC" />
 
 	</resultMap>
 
 	<sql id="base_field">
-        id,boxLength,createTime
+		id,boxleng
 	</sql>
 	
 	<sql id="other-condition">
-            <if test= "boxLength != null ">	and boxLength = #{boxLength,jdbcType=NUMERIC }</if>
-            <if test= "createTime != null ">	and createTime = #{createTime }</if>
+            <if test= "boxleng != null ">	and boxleng = #{boxleng,jdbcType=NUMERIC }</if>
 
  	</sql>
  	
  	<sql id="like-condition">
-            <if test= "boxLength != null ">	and boxLength = #{boxLength,jdbcType=NUMERIC }</if>
-            <if test= "createTime != null ">	and createTime = #{createTime }</if>
+            <if test= "boxleng != null ">	and boxleng = #{boxleng,jdbcType=NUMERIC }</if>
 
  	</sql>
 	
 	<sql id="selectByMapSQL">
 		select
 		<include refid="base_field" />
-		from carbox
+		from Carbox2
 		<choose>
 		    <when test="findBy != null">
 		      	<where>
@@ -65,7 +62,7 @@
 	<select id="select" resultMap="result" parameterType="java.lang.Integer">
 		select
 		<include refid="base_field" />
-		from carbox  
+		from Carbox2  
 		<where>
 			<if test="_parameter != null">
 				id = #{id,jdbcType=INTEGER}
@@ -76,33 +73,33 @@
 	<select id="selectByIds" resultMap="result" >
 		select
 		<include refid="base_field" />
-		from carbox  where id in (${_parameter})
+		from Carbox2  where id in (${_parameter})
 	</select>		
 
-	<insert id="insert" parameterType="com.lyz.user.model.Carbox" useGeneratedKeys="true" keyProperty="id">
-        insert into carbox( id,boxLength,createTime ) values (#{id,jdbcType=INTEGER},#{boxLength,jdbcType=NUMERIC},#{createTime} )
+	<insert id="insert" parameterType="com.lyz.cabox.model.Carbox2" useGeneratedKeys="true" keyProperty="id">
+		insert into Carbox2( id,boxleng ) values (#{id,jdbcType=INTEGER},#{boxleng,jdbcType=NUMERIC} )
 	</insert>
 
-	<update id="update" parameterType="com.lyz.user.model.Carbox">
-        update carbox set boxLength=#{boxLength,jdbcType=NUMERIC}, where id=#{id,jdbcType=INTEGER}
+	<update id="update" parameterType="com.lyz.cabox.model.Carbox2">
+		update Carbox2 set boxleng=#{boxleng,jdbcType=NUMERIC} where id=#{id,jdbcType=INTEGER}
 	</update>	
 	
-	<update id="update4Selective" parameterType="com.lyz.user.model.Carbox">
-        update carbox
+	<update id="update4Selective" parameterType="com.lyz.cabox.model.Carbox2">
+		update Carbox2
         <set>
-            <if test="boxLength != null "> 
-                boxLength = #{boxLength,jdbcType=NUMERIC},
+            <if test="boxleng != null "> 
+                boxleng = #{boxleng,jdbcType=NUMERIC},
             </if>
         </set>
          where id=#{id,jdbcType=INTEGER}
 	</update>	
 
 	<delete id="deleteByPrimaryKey">
-		delete from carbox where id = #{id,jdbcType=INTEGER}
+		delete from Carbox2 where id = #{id,jdbcType=INTEGER}
 	</delete>	
 
-	<delete id="delete" parameterType="com.lyz.user.model.Carbox">
-		delete from carbox
+	<delete id="delete" parameterType="com.lyz.cabox.model.Carbox2">
+		delete from Carbox2
 		<where>
 			<if test="id != null">
 				id = #{id,jdbcType=INTEGER}
@@ -110,12 +107,6 @@
 			<include refid="other-condition" />
 		</where>
 	</delete>	
-	
-	<select id="selectCarbox" resultMap="result" >
-		select
-		<include refid="base_field" />
-		from carbox 
-	</select>
 		
 </mapper>
 

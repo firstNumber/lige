@@ -6,16 +6,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.lyz.student.service.StudentService;
+import com.lyz.cabox.service.CarboxService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:application-context.xml" })
 public class TrantS {
 	@Autowired
-	private StudentService StudentService;
+	private CarboxService carboxService;
 
 	@Test
 	public void student() {
-		// StudentService
+		carboxService.updateBoxleng();
+	}
+
+	@Test
+	public void salar() {
+		System.out.println("");
 	}
 }

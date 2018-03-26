@@ -16,11 +16,23 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public void updateboxleng() {
-
+		for (int i = 0; i < 10; i++) {
+			try {
+				updateboxleng2();
+			} catch (Exception ex) {
+				System.out.println("错了");
+			}
+		}
 	}
 
 	@Override
 	public void updateboxleng2() {
+		try {
+			// update 1;
+			// update 2;
+		} catch (Exception ex) {
+			throw ex;
+		}
 
 	}
 
