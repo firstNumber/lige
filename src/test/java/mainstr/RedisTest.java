@@ -20,5 +20,8 @@ public class RedisTest {
 	public void student() {
 		CacheMan.add(CacheEnum.LIGE, "lyz.ok", 30);
 	}
+	
+	
+	
 
 }
