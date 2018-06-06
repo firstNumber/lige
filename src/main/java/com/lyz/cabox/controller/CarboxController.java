@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.lyz.cabox.service.CarboxService;
+import com.lyz.common.exception.BusiException;
 
 @Controller
 @RequestMapping("/carbox")
@@ -19,7 +20,7 @@ public class CarboxController {
 	@ResponseBody
 	public String updatebox() {
 		carboxService.updateBoxleng();
-		return "1";
+		throw new BusiException("Hello Error");
 	}
 
 	@RequestMapping(value = "/updatebox2.action", method = RequestMethod.GET)

@@ -19,6 +19,8 @@
 		use-default-filters="false">
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
+		<context:include-filter type="annotation"
+			expression="org.springframework.web.bind.annotation.ControllerAdvice" />
 	</context:component-scan>
 
 	<!--避免IE执行AJAX时，返回JSON出现下载文件 -->
@@ -40,21 +42,22 @@
 	</bean>
 
 	<!-- 自定义异常处理 -->
-	<bean id="exceptionHandler" class="com.lyz.common.exception.MyExceptionHandler" />
+<!-- 	<bean id="exceptionHandler" class="com.lyz.common.exception.MyExceptionHandler"  -->
+<!-- 		/> -->
 
 	<bean name="dateConversionService"
 		class="org.springframework.format.support.FormattingConversionServiceFactoryBean" />
 
-   <!-- date -->
-<!-- 	<bean -->
-<!-- 		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"> -->
-<!-- 		<property name="webBindingInitializer">   -->
-<!-- 		    <bean class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">   -->
-<!-- 		        <property name="conversionService">   -->
-<!-- 		            <bean class="org.springframework.format.support.FormattingConversionServiceFactoryBean"></bean>   -->
-<!-- 		        </property>   -->
-<!-- 		    </bean>   -->
-<!-- 		</property>   -->
-<!-- 	</bean> -->
+	<!-- date -->
+	<!-- <bean -->
+	<!-- class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"> -->
+	<!-- <property name="webBindingInitializer"> -->
+	<!-- <bean class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer"> -->
+	<!-- <property name="conversionService"> -->
+	<!-- <bean class="org.springframework.format.support.FormattingConversionServiceFactoryBean"></bean> -->
+	<!-- </property> -->
+	<!-- </bean> -->
+	<!-- </property> -->
+	<!-- </bean> -->
 
 </beans>

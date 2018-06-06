@@ -192,6 +192,13 @@
 			<version>1.4.5.RELEASE</version>
 		</dependency>
 
+		<!-- Shio -->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-core</artifactId>
+			<version>1.2.6</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<finalName>lige</finalName>
