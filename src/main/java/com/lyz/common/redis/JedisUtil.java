@@ -420,29 +420,31 @@ public class JedisUtil {
 	 * @Author: liyongzhen
 	 * @Date: 2016年6月6日
 	 */
-	// protected static Object blpop(String cacheName) {
-	// Jedis jedis = null;
-	// Object obj = null;
-	// boolean isBroken = false;
-	// try {
-	// jedis = getJedis();
-	//// System.out.println("我的心在等待,永远在等待.........");
-	// byte[] bKey = cacheName.getBytes();
-	// List<byte[]> results = jedis.blpop(0,bKey);
-	//// System.out.println("你快回来");
-	// if(!results.isEmpty()){
-	// //第一个元素是key,第二个是value
-	//// System.out.println(new String(results.get(0)));
-	// obj = JedisSerializeJsonUtil.unserialize(results.get(1));
-	// }
-	// } catch (Exception e) {
-	// isBroken = true;
-	// logger.error(e.getMessage(), e);
-	// } finally {
-	// release(jedis, isBroken);
-	// }
-	// return obj;
-	// }
+	protected static Object blpop(String cacheName) {
+		Jedis jedis = null;
+		Object obj = null;
+		boolean isBroken = false;
+		try {
+			jedis = getJedis();
+			// System.out.println("我的心在等待,永远在等待.........");
+			byte[] bKey = cacheName.getBytes();
+			List<byte[]> results = jedis.blpop(0, bKey);
+			// System.out.println("你快回来");
+			if (!results.isEmpty()) {
+				// 第一个元素是key,第二个是value
+				// System.out.println(new String(results.get(0)));
+				obj = JedisSerializeJsonUtil.serialize(results.get(1));
+			}
+
+			List<String> list = jedis.lrange("12", 0, 1);
+		} catch (Exception e) {
+			isBroken = true;
+			logger.error(e.getMessage(), e);
+		} finally {
+			release(jedis, isBroken);
+		}
+		return obj;
+	}
 
 	/**
 	 * 从右侧 放入 对象

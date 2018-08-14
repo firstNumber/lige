@@ -1,7 +1,5 @@
 package com.lyz.common.mainstr;
 
-import java.io.File;
-
 public class hello {
 
 	public static void main(String[] args) {
@@ -33,8 +31,13 @@ public class hello {
 		// System.out.println(a == "ab" + b);
 		// Sub s = new Sub();
 		// Object c = s;
-		System.out.println("1");
-		File file = null;
-		System.out.println(file);
+		// System.out.println("1");
+		// File file = null;
+		// System.out.println(file);
+		Student s = null;
+
+		if (s.name == "1" || s == null) {
+			System.out.println("1");
+		}
 	}
 }
