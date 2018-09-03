@@ -11,7 +11,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<spring-version>4.1.0.RELEASE</spring-version>	<!-- spring版本号 -->
+		<spring-version>4.3.5.RELEASE</spring-version>	<!-- spring版本号 -->
 		<mybatis.version>3.2.8</mybatis.version>	<!-- mybatis版本号 -->
 		<slf4j.version>1.7.7</slf4j.version>		<!-- slf4j日志文件管理包版本 -->
 		<log4j.version>1.2.17</log4j.version>		<!-- log4j日志文件管理包版本 -->
@@ -22,7 +22,22 @@
 	</properties>
 
 
+	<repositories>
+		<repository>
+			<id>central</id>
+			<url>https://maven.aliyun.com/repository/central/</url>
+		</repository>
+	</repositories>
+
+
 	<dependencies>
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-all</artifactId>
+			<version>4.1.4.Final</version>
+		</dependency>
+
+
 		<!-- druid -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -33,7 +48,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.11</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -198,6 +213,19 @@
 			<artifactId>shiro-core</artifactId>
 			<version>1.2.6</version>
 		</dependency>
+
+		<!-- <dependency> -->
+		<!-- <groupId>org.mongodb</groupId> -->
+		<!-- <artifactId>mongo-java-driver</artifactId> -->
+		<!-- <version>2.12.1</version> -->
+		<!-- </dependency> -->
+
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb</artifactId>
+			<version>1.8.1.RELEASE</version>
+		</dependency>
+
 
 	</dependencies>
 	<build>

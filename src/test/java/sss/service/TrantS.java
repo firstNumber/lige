@@ -16,11 +16,6 @@ public class TrantS {
 
 	@Test
 	public void student() {
-		carboxService.updateBoxleng();
-	}
-
-	@Test
-	public void salar() {
-		System.out.println("");
+		carboxService.mogodbQuery();
 	}
 }

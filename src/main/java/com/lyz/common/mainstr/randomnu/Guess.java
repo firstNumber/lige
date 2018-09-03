@@ -39,7 +39,7 @@ public class Guess {
 		// String a = "3213213";
 		// System.out.println(Integer.valueOf(a));
 
-		int i = 20, a = 30;
+		// int i = 20, a = 30;
 		int f = (20 / 30) + 1;
 		System.out.println(f);
 

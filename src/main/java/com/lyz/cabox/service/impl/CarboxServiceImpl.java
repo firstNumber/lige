@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.lyz.cabox.dao.CarboxDao;
 import com.lyz.cabox.model.Carbox;
+import com.lyz.cabox.mogoDao.INoSqlBaseDao;
 import com.lyz.cabox.service.Carbox2Service;
 import com.lyz.cabox.service.CarboxService;
 import com.lyz.common.dao.BaseDao;
@@ -19,6 +20,8 @@ public class CarboxServiceImpl extends BaseServiceImpl<Carbox> implements Carbox
 	private Carbox2Service carbox2Service;
 	@Autowired
 	private CarboxDao carboxDaoImpl;
+	@Autowired
+	private INoSqlBaseDao noSqlBaseDao;
 
 	@Override
 	public BaseDao<Carbox> getBaseDao() {
@@ -46,5 +49,10 @@ public class CarboxServiceImpl extends BaseServiceImpl<Carbox> implements Carbox
 		int i = carboxDaoImpl.updateBoxleng(carbox);
 
 		System.out.println("=============接单成功=================" + i);
+	}
+
+	@Override
+	public void mogodbQuery() {
+		noSqlBaseDao.query();
 	}
 }

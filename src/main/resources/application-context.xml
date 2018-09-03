@@ -14,6 +14,7 @@
 	<import resource="classpath:spring-mybatis.xml" />
 	<import resource="classpath:redis/redis-context.xml" />
 	<import resource="classpath:rabbitmq/spring-rabbit.xml" />
+	<import resource="classpath:mogodb/mongodb-config.xml" />
 
 	<bean id="propertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -23,6 +24,7 @@
 				<value>classpath:database.properties</value>
 				<value>classpath:jedis.properties</value>
 				<value>classpath:rabbitmq/rabbitmq.properties</value>
+				<value>classpath:mogodb/mogodb.properties</value>
 			</list>
 		</property>
 	</bean>

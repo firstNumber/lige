@@ -7,4 +7,6 @@ public interface CarboxService extends BaseService<Carbox> {
 	public void updateBoxleng();
 
 	public void updateBoxleng2();
+
+	public void mogodbQuery();
 }
